@@ -26,7 +26,9 @@ contract Sample is KRNL {
         KernelResponse[] memory kernelResponses = abi.decode(krnlPayload.kernelResponses, (KernelResponse[]));
         uint256 score;
         for (uint i; i < kernelResponses.length; i ++) {
-            if (kernelResponses[i].kernelId == 337) {
+            // EXAMPLE
+            // if the response from kernel is in uint256 format
+            if (kernelResponses[i].kernelId == REPLACE_WITH_KERNEL_ID) {
                 score = abi.decode(kernelResponses[i].result, (uint256));
             }
         }
